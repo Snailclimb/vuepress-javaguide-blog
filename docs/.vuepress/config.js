@@ -4,7 +4,7 @@ module.exports = config({
   title: "JavaGuide",
   description: "Java学习&&面试指南",
   dest: "./dist",
-
+  base: "/vuepress-javaguide-blog/",
   head: [
     [
       "script",
