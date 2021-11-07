@@ -28,13 +28,12 @@ module.exports = config({
     author: "Guide哥",
     repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
     nav: [
-      { text: "博客主页", link: "/", icon: "home" },
-      { text: "Java面试指南", icon: "creative", link: "/javaguide/", },
+      { text: "Java面试指南", icon: "creative", link: "/", },
       { text: "IDEA指南", icon: "creative", link: "/idea-tutorial/", },
       { text: "程序员副业赚钱之路", icon: "creative", link: "/guide/", }
     ],
     sidebar: {
-      '/javaguide/': [{
+      '/': [{
         title: "Java",
         icon: "java",
         prefix: "java/",
@@ -60,27 +59,30 @@ module.exports = config({
           },
           {
             title: "并发编程",
-            prefix: "operating-system/",
+            prefix: "concurrent/",
             children: [
+              "java并发基础常见面试题总结", "java并发进阶常见面试题总结",
+              {
+                title: "重要知识点",
+                children: ["并发容器总结", "java线程池学习总结", "拿来即用的java线程池最佳实践", "aqs原理以及aqs同步组件总结",
+                  "atomic原子类总结", "threadlocal", "completablefuture-intro"],
+              },
             ],
           },
           {
             title: "JVM",
-            prefix: "operating-system/",
-            children: [
-            ],
+            prefix: "jvm/",
+            children: ["内存区域", "jvm垃圾回收", "类文件结构", "类加载过程", "类加载器", "jvm参数指南", "[加餐]大白话带你认识jvm"],
           },
           {
             title: "新特性",
-            prefix: "operating-system/",
-            children: [
-            ],
+            prefix: "new-features/",
+            children: ["java新特性总结"],
           },
           {
             title: "小技巧",
-            prefix: "operating-system/",
-            children: [
-            ],
+            prefix: "tips/",
+            children: ["locate-performance-problems/手把手教你定位常见Java性能问题", "jad反编译tricks"],
           },
         ],
       },
