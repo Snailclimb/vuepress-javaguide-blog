@@ -26,18 +26,54 @@ module.exports = config({
     logo: "/logo.png",
     hostname: "https://vuepress-theme-hope-demo.mrhope.site",
     author: "Guide哥",
-    repo: "https://github.com/vuepress-theme-hope/vuepress-theme-hope",
+    repo: "https://github.com/Snailclimb/JavaGuide",
     nav: [
       { text: "Java面试指南", icon: "creative", link: "/", },
       { text: "IDEA指南", icon: "creative", link: "/idea-tutorial/", },
       { text: "程序员副业赚钱之路", icon: "creative", link: "/guide/", }
     ],
     sidebar: {
+      // 应该把更精确的路径放置在前边
+      '/idea-tutorial/':
+        [
+          {
+            title: "IDEA小技巧",
+            icon: "creative",
+            prefix: "idea-tips/",
+            collapsable: false,
+            children: [
+              "idea-refractor-intro",
+              "idea-plug-in-development-intro",
+              "idea-source-code-reading-skills",
+            ]
+          },
+          {
+            title: "IDEA插件推荐",
+            icon: "plugin",
+            collapsable: false,
+            children: [
+              "idea-plugins/shortcut-key",
+              "idea-plugins/idea-themes",
+              "idea-plugins/improve-code",
+              "idea-plugins/interface-beautification",
+              "idea-plugins/camel-case",
+              "idea-plugins/code-glance",
+              "idea-plugins/code-statistic",
+              "idea-plugins/git-commit-template",
+              "idea-plugins/gson-format",
+              "idea-plugins/idea-features-trainer",
+              "idea-plugins/jclasslib",
+              "idea-plugins/maven-helper",
+              "idea-plugins/rest-devlop",
+              "idea-plugins/save-actions",
+              "idea-plugins/sequence-diagram",
+              "idea-plugins/translation",
+            ]
+          },
+        ],
+      // 必须放在最后面
       '/': [{
-        title: "Java",
-        icon: "java",
-        prefix: "java/",
-        collapsable: false,
+        title: "Java", icon: "java", prefix: "java/", collapsable: false,
         children: [
           {
             title: "基础", prefix: "basis/",
@@ -45,7 +81,7 @@ module.exports = config({
               "java基础知识总结",
               {
                 title: "重要知识点",
-                children: ["反射机制详解", "代理模式详解", "IO模型详解"],
+                children: ["反射机制详解", "代理模式详解", "io模型详解"],
               },],
           },
           {
@@ -131,43 +167,6 @@ module.exports = config({
           },
         ],
       }],
-      '/idea-tutorial/':
-        [
-          {
-            title: "IDEA小技巧",
-            icon: "creative",
-            collapsable: false,
-            children: [
-              "idea-tips/",
-              "idea-tips/idea-refractor-intro",
-              "idea-tips/idea-plug-in-development-intro",
-              "idea-tips/idea-source-code-reading-skills",
-            ]
-          },
-          {
-            title: "IDEA插件推荐",
-            icon: "plugin",
-            collapsable: false,
-            children: [
-              "idea-plugins/shortcut-key",
-              "idea-plugins/idea-themes",
-              "idea-plugins/improve-code",
-              "idea-plugins/interface-beautification",
-              "idea-plugins/camel-case",
-              "idea-plugins/code-glance",
-              "idea-plugins/code-statistic",
-              "idea-plugins/git-commit-template",
-              "idea-plugins/gson-format",
-              "idea-plugins/idea-features-trainer",
-              "idea-plugins/jclasslib",
-              "idea-plugins/maven-helper",
-              "idea-plugins/rest-devlop",
-              "idea-plugins/save-actions",
-              "idea-plugins/sequence-diagram",
-              "idea-plugins/translation",
-            ]
-          },
-        ],
     },
     blog: {
       intro: "/intro/",
