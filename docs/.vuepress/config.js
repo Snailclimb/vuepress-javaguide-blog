@@ -30,7 +30,19 @@ module.exports = config({
     nav: [
       { text: "Java面试指南", icon: "creative", link: "/", },
       { text: "IDEA指南", icon: "creative", link: "/idea-tutorial/", },
-      { text: "程序员副业赚钱之路", icon: "creative", link: "/guide/", }
+      {
+        text: "PDF资源", icon: "file",
+        items: [
+          {
+            text: "JavaGuide面试突击版",
+            link: "https://t.1yb.co/Fy1e",
+          },
+          {
+            text: "消息队列常见知识点&面试题总结",
+            link: "https://t.1yb.co/Fy0u",
+          },
+        ],
+      }
     ],
     sidebar: {
       // 应该把更精确的路径放置在前边
@@ -129,17 +141,21 @@ module.exports = config({
         collapsable: false,
         children: [
           {
-            title: "计算机网络",
-            prefix: "network/",
+            title: "计算机网络", prefix: "network/",
             children: [
               "计算机网络常见面试题", "谢希仁老师的《计算机网络》内容总结", "HTTPS中的TLS"
             ],
           },
           {
-            title: "操作系统",
-            prefix: "operating-system/",
+            title: "操作系统", prefix: "operating-system/",
             children: [
               "basis", "linux", "shell"
+            ],
+          },
+          {
+            title: "数据结构", prefix: "data-structure/",
+            children: [
+              "线性数据结构", "图", "堆", "树","bloom-filter"
             ],
           },
         ],
