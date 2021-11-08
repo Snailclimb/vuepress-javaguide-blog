@@ -85,7 +85,7 @@ module.exports = config({
         ],
       // 必须放在最后面
       '/': [{
-        title: "Java", icon: "java", prefix: "java/", collapsable: false,
+        title: "Java", icon: "java", prefix: "java/",
         children: [
           {
             title: "基础", prefix: "basis/",
@@ -106,39 +106,32 @@ module.exports = config({
               },],
           },
           {
-            title: "并发编程",
-            prefix: "concurrent/",
+            title: "并发编程", prefix: "concurrent/",
             children: [
               "java并发基础常见面试题总结", "java并发进阶常见面试题总结",
               {
                 title: "重要知识点",
-                children: ["并发容器总结", "java线程池学习总结", "拿来即用的java线程池最佳实践", "aqs原理以及aqs同步组件总结",
+                children: ["并发容器总结", "java线程池学习总结", "拿来即用的java线程池最佳实践", "aqs原理以及aqs同步组件总结", "reentrantlock",
                   "atomic原子类总结", "threadlocal", "completablefuture-intro"],
               },
             ],
           },
           {
-            title: "JVM",
-            prefix: "jvm/",
+            title: "JVM", prefix: "jvm/",
             children: ["内存区域", "jvm垃圾回收", "类文件结构", "类加载过程", "类加载器", "jvm参数指南", "[加餐]大白话带你认识jvm"],
           },
           {
-            title: "新特性",
-            prefix: "new-features/",
-            children: ["java新特性总结"],
+            title: "新特性", prefix: "new-features/",
+            children: ["java8-common-new-features", "java8新特性总结", "java新特性总结"],
           },
           {
-            title: "小技巧",
-            prefix: "tips/",
+            title: "小技巧", prefix: "tips/",
             children: ["locate-performance-problems/手把手教你定位常见Java性能问题", "jad反编译tricks"],
           },
         ],
       },
       {
-        title: "计算机基础",
-        icon: "computer",
-        prefix: "cs-basics/",
-        collapsable: false,
+        title: "计算机基础", icon: "computer", prefix: "cs-basics/",
         children: [
           {
             title: "计算机网络", prefix: "network/",
@@ -155,14 +148,20 @@ module.exports = config({
           {
             title: "数据结构", prefix: "data-structure/",
             children: [
-              "线性数据结构", "图", "堆", "树","bloom-filter"
+              "线性数据结构", "图", "堆", "树", "bloom-filter"
+            ],
+          },
+          {
+            title: "算法", prefix: "algorithms/",
+            children: [
+              "几道常见的字符串算法题", "几道常见的链表算法题", "剑指offer部分编程题"
             ],
           },
         ],
 
       },
       {
-        title: "数据库", icon: "workingDirectory", prefix: "database/", collapsable: false,
+        title: "数据库", icon: "workingDirectory", prefix: "database/",
         children: [
           "数据库基础知识",
           "字符集",
@@ -181,6 +180,60 @@ module.exports = config({
             title: "Redis", prefix: "redis/",
             children: ["redis-all", "3-commonly-used-cache-read-and-write-strategies"],
           },
+        ],
+      },
+      {
+        title: "系统设计", icon: "workingDirectory", prefix: "system-design/",
+        children: [
+          {
+            title: "基础", prefix: "basis/",
+            children: [
+              "RESTfulAPI",
+              "naming",
+            ],
+          },
+          {
+            title: "常用框架", prefix: "framework/",
+            children: [{
+              title: "Spring", prefix: "spring/",
+              children: ["Spring常见问题总结", "Spring&SpringBoot常用注解总结", "Spring事务总结", "Spring设计模式总结", "SpringBoot自动装配原理"]
+            },
+              "mybatis/mybatis-interview", "netty",
+            ],
+          },
+          {
+            title: "安全", prefix: "security/",
+            children: ["basis-of-authority-certification", "jwt优缺点分析以及常见问题解决方案", "sso-intro", "数据脱敏"]
+          },
+        ],
+      },
+      {
+        title: "分布式", icon: "workingDirectory", prefix: "distributed-system/",
+        children: [
+          {
+            title: "理论&算法", prefix: "理论&算法/",
+            children: ["cap&base理论", "paxos&raft算法"],
+          },
+          "api-gateway", "distributed-id",
+          {
+            title: "rpc", prefix: "rpc/",
+            children: ["dubbo", "why-use-rpc"]
+          },
+          "distributed-transaction"
+        ],
+      }, {
+        title: "高性能", icon: "workingDirectory", prefix: "high-performance/",
+        children: [
+          "读写分离&分库分表", "负载均衡",
+          {
+            title: "消息队列", prefix: "message-queue/",
+            children: ["message-queue", "kafka知识点&面试题总结", "rocketmq-intro", "rocketmq-questions", "rabbitmq-intro"],
+          },
+        ],
+      }, {
+        title: "高可用", icon: "workingDirectory", prefix: "high-availability/",
+        children: [
+          "高可用系统设计", "limit-request", "降级&熔断", "超时和重试机制", "集群", "灾备设计和异地多活", "性能测试"
         ],
       }],
     },
