@@ -28,8 +28,11 @@ module.exports = config({
     author: "Guide哥",
     repo: "https://github.com/Snailclimb/JavaGuide",
     nav: [
-      { text: "Java面试指南", icon: "creative", link: "/", },
-      { text: "IDEA指南", icon: "creative", link: "/idea-tutorial/", },
+      { text: "Java面试指南", icon: "java", link: "/", },
+      { text: "Java书单", icon: "java", link: "https://gitee.com/SnailClimb/awesome-cs", },
+      { text: "Java学习路线", icon: "java", link: "https://zhuanlan.zhihu.com/p/379041500", },
+      { text: "IDEA指南", icon: "intellijidea", link: "/idea-tutorial/", },
+      { text: "开发工具", icon: "tool", link: "/tools/", },
       {
         text: "PDF资源", icon: "file",
         items: [
@@ -46,6 +49,22 @@ module.exports = config({
     ],
     sidebar: {
       // 应该把更精确的路径放置在前边
+      '/tools/': [
+        {
+          title: "Git",
+          icon: "git",
+          prefix: "git/",
+          collapsable: false,
+          children: ["git", "github小技巧"]
+        },
+        {
+          title: "Docker",
+          icon: "git",
+          prefix: "docker/",
+          collapsable: false,
+          children: ["docker", "docker从入门到实战"]
+        },
+      ],
       '/idea-tutorial/':
         [
           {
@@ -63,23 +82,13 @@ module.exports = config({
             title: "IDEA插件推荐",
             icon: "plugin",
             collapsable: false,
+            prefix: "idea-plugins/",
             children: [
-              "idea-plugins/shortcut-key",
-              "idea-plugins/idea-themes",
-              "idea-plugins/improve-code",
-              "idea-plugins/interface-beautification",
-              "idea-plugins/camel-case",
-              "idea-plugins/code-glance",
-              "idea-plugins/code-statistic",
-              "idea-plugins/git-commit-template",
-              "idea-plugins/gson-format",
-              "idea-plugins/idea-features-trainer",
-              "idea-plugins/jclasslib",
-              "idea-plugins/maven-helper",
-              "idea-plugins/rest-devlop",
-              "idea-plugins/save-actions",
-              "idea-plugins/sequence-diagram",
-              "idea-plugins/translation",
+              "shortcut-key", "idea-themes", "improve-code", "interface-beautification",
+              "camel-case", "code-glance", "code-statistic",
+              "git-commit-template", "gson-format", "dea-features-trainer", "jclasslib",
+              "maven-helper", "rest-devlop", "save-actions", "sequence-diagram", "translation",
+              "others"
             ]
           },
         ],
@@ -183,7 +192,7 @@ module.exports = config({
         ],
       },
       {
-        title: "系统设计", icon: "workingDirectory", prefix: "system-design/",
+        title: "系统设计", icon: "back-stage", prefix: "system-design/",
         children: [
           {
             title: "基础", prefix: "basis/",
@@ -208,7 +217,7 @@ module.exports = config({
         ],
       },
       {
-        title: "分布式", icon: "workingDirectory", prefix: "distributed-system/",
+        title: "分布式", icon: "tree", prefix: "distributed-system/",
         children: [
           {
             title: "理论&算法", prefix: "理论&算法/",
@@ -222,7 +231,7 @@ module.exports = config({
           "distributed-transaction"
         ],
       }, {
-        title: "高性能", icon: "workingDirectory", prefix: "high-performance/",
+        title: "高性能", icon: "asynchronous", prefix: "high-performance/",
         children: [
           "读写分离&分库分表", "负载均衡",
           {
@@ -231,7 +240,7 @@ module.exports = config({
           },
         ],
       }, {
-        title: "高可用", icon: "workingDirectory", prefix: "high-availability/",
+        title: "高可用", icon: "operate", prefix: "high-availability/",
         children: [
           "高可用系统设计", "limit-request", "降级&熔断", "超时和重试机制", "集群", "灾备设计和异地多活", "性能测试"
         ],

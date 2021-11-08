@@ -76,13 +76,13 @@ JMS（JAVA Message Service,java 消息服务）是 java 的消息服务，JMS �
 
 **① 点到点（P2P）模型**
 
-![点到点（P2P）模型](https://user-gold-cdn.xitu.io/2018/4/21/162e7185572ca37d?w=575&h=135&f=gif&s=8530)
+![队列模型](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/队列模型23.png)
 
 使用**队列（Queue）**作为消息通信载体；满足**生产者与消费者模式**，一条消息只能被一个消费者使用，未被消费的消息在队列中保留直到被消费或超时。比如：我们生产者发送 100 条消息的话，两个消费者来消费一般情况下两个消费者会按照消息发送的顺序各自消费一半（也就是你一个我一个的消费。）
 
 **② 发布/订阅（Pub/Sub）模型**
 
-![发布/订阅（Pub/Sub）模型](https://user-gold-cdn.xitu.io/2018/4/21/162e7187c268eaa5?w=402&h=164&f=gif&s=15492)
+![发布订阅模型](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/java-guide-blog/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%9E%8B.png)
 
 发布订阅模型（Pub/Sub） 使用**主题（Topic）**作为消息通信载体，类似于**广播模式**；发布者发布一条消息，该消息通过主题传递给所有的订阅者，**在一条消息广播之后才订阅的用户则是收不到该条消息的**。
 
